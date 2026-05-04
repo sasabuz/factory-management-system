@@ -43,8 +43,8 @@ export const loginController = async (req: Request, res: Response) => {
     // Set HttpOnly Cookie 
     res.cookie('authToken', response.token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
+        secure: true,
+        sameSite: 'none',
         maxAge: 1000 * 60 * 60 * 24 * 7,
     });
 
