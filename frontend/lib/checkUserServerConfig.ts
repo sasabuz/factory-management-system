@@ -22,7 +22,7 @@ export const checkUser = async (): Promise<User | null> => {
 
   try {
     const res = await axios.get<{ data: User }>(
-      "http://localhost:3000/api/auth/me",
+      `${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
